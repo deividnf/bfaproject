@@ -7,21 +7,12 @@ Infraestrutura backend para governança de consumo e billing baseado em uso (moc
 
 ## 🧬 Stack em um olhar
 
-**Linguagem & Runtime**
-- 🟦 TypeScript
-- 🟢 Node.js 18+
-
-**Framework & Arquitetura**
-- 🧱 NestJS (modular monolith)
-- 🧩 Clean Architecture orientada a domínios (tenants, usage, billing, plans)
-
-**Persistência & ORM**
-- 🐘 PostgreSQL (Supabase)
-- 📦 Prisma 6 (Prisma Client 6.19.x)
-
-**Observabilidade & Qualidade**
-- 📊 Pino + nestjs-pino (logs JSON estruturados)
-- 🧪 Jest + Supertest (testes de integração e unidade)
+| Categoria              | Tecnologias |
+| ---------------------- | ----------- |
+| **Linguagens & Runtime** | ![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?style=for-the-badge&logo=typescript&logoColor=white) ![Node.js](https://img.shields.io/badge/Node.js-18%2B-43853d?style=for-the-badge&logo=node.js&logoColor=white) |
+| **Framework & Arquitetura** | ![NestJS](https://img.shields.io/badge/NestJS-e0234e?style=for-the-badge&logo=nestjs&logoColor=white) ![Clean Architecture](https://img.shields.io/badge/Clean%20Architecture-Dom%C3%ADnios-blueviolet?style=for-the-badge) |
+| **Persistência & ORM** | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white) ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=black) ![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white) |
+| **Observabilidade & Qualidade** | ![Pino](https://img.shields.io/badge/Pino%20Logger-000000?style=for-the-badge&logo=pino&logoColor=white) ![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white) ![Supertest](https://img.shields.io/badge/Supertest-333333?style=for-the-badge&logo=nodedotjs&logoColor=white) |
 
 ---
 
@@ -273,3 +264,13 @@ Para mais detalhes de modelagem e estratégias multi-tenant, veja:
 - Evoluir o módulo `billing` para fechar ciclos e gerar `Invoice` mock com base em consumo agregado.
 
 Toda nova funcionalidade deve respeitar o documento de governança em `context/billing_foundation_api_agent_governance.md` e ser documentada em `docs/` antes da implementação.
+
+---
+
+## ✉️ Contato
+
+Quer conversar sobre produto, arquitetura ou billing baseado em uso?
+
+[![Medium](https://img.shields.io/badge/Medium-000000?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@deividnf)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dednascimento/)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:deividnascimento.corporativo@gmail.com)
