@@ -5,6 +5,35 @@ Infraestrutura backend para governança de consumo e billing baseado em uso (moc
 
 ---
 
+## 🎯 Contexto e problema que a BFA resolve
+
+No estudo de caso descrito em context/bfa_document.md, a BFA nasce para resolver um padrão recorrente em empresas SaaS/B2B:
+
+- Implementações de billing e medição de consumo feitas de forma ad hoc em cada produto.
+- Falta de rastreabilidade e idempotência no registro de uso.
+- Dificuldade em aplicar limites de plano e simular cenários de monetização.
+- Ausência de uma "fundação" reutilizável de billing multi-tenant.
+
+A BFA se posiciona como um **backend especializado em governança de consumo e billing baseado em uso (mock)**, que pode ser plugado em produtos diferentes, evitando reescrever sempre o mesmo núcleo.
+
+Este repositório representa o **núcleo técnico desse backend**, focado inicialmente em tenants, API Keys, modelagem de dados e observabilidade, preparando o terreno para módulos futuros de usage, aggregation e billing.
+
+---
+
+## 🧩 Visão geral do MVP
+
+Este repositório implementa o núcleo de:
+
+- Gestão de tenants e API Keys.
+- Registro e agregação de consumo (usage).
+- Planos e limites de uso.
+- Ciclo de billing com invoices simuladas (mock).
+- Observabilidade com logs estruturados.
+
+O foco atual é o MVP backend, com rotas essenciais para healthcheck, criação de tenants e autenticação via API Key.
+
+---
+
 ## 🧬 Stack em um olhar
 
 | Categoria              | Tecnologias |
@@ -51,41 +80,10 @@ Infraestrutura backend para governança de consumo e billing baseado em uso (moc
 - [DAS (Diagrama de Arquitetura de Software) da BFA - architecture_das.mmd](docs/flows/architecture_das.mmd)
 - [Fluxo de GET /health - healthcheck_flow.mmd](docs/flows/healthcheck_flow.mmd)
 - [Fluxo de criação de tenant + API Key - tenant_create_flow.mmd](docs/flows/tenant_create_flow.mmd)
-- [Fluxo de leitura de tenant autenticada - tenant_get_flow.mmd – ](docs/flows/tenant_get_flow.mmd)
-- [Fluxo conceitual de registro de uso - usage_event_flow_conceptual.mmd – ](docs/flows/usage_event_flow_conceptual.mmd)
+- [Fluxo de leitura de tenant autenticada - tenant_get_flow.mmd](docs/flows/tenant_get_flow.mmd)
+- [Fluxo conceitual de registro de uso - usage_event_flow_conceptual.mmd](docs/flows/usage_event_flow_conceptual.mmd)
 
 Abra esses arquivos no VS Code ou GitHub com suporte a Mermaid para visualizar os fluxogramas.
-
----
-
-## 🧩 Visão geral do MVP
-
-Este repositório implementa o núcleo de:
-
-- Gestão de tenants e API Keys.
-- Registro e agregação de consumo (usage).
-- Planos e limites de uso.
-- Ciclo de billing com invoices simuladas (mock).
-- Observabilidade com logs estruturados.
-
-O foco atual é o MVP backend, com rotas essenciais para healthcheck, criação de tenants e autenticação via API Key.
-
----
-
-## 🎯 Contexto e problema que a BFA resolve
-
-No estudo de caso descrito em context/bfa_document.md, a BFA nasce para resolver um padrão recorrente em empresas SaaS/B2B:
-
-- Implementações de billing e medição de consumo feitas de forma ad hoc em cada produto.
-- Falta de rastreabilidade e idempotência no registro de uso.
-- Dificuldade em aplicar limites de plano e simular cenários de monetização.
-- Ausência de uma "fundação" reutilizável de billing multi-tenant.
-
-A BFA se posiciona como um **backend especializado em governança de consumo e billing baseado em uso (mock)**, que pode ser plugado em produtos diferentes, evitando reescrever sempre o mesmo núcleo.
-
-Este repositório representa o **núcleo técnico desse backend**, focado inicialmente em tenants, API Keys, modelagem de dados e observabilidade, preparando o terreno para módulos futuros de usage, aggregation e billing.
-
----
 
 ## 🏗️ Estrutura de pastas (backend)
 
