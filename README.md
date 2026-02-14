@@ -7,7 +7,7 @@ Infraestrutura backend para governança de consumo e billing baseado em uso (moc
 
 ## 🎯 Contexto e problema que a BFA resolve
 
-No estudo de caso descrito em context/bfa_document.md, a BFA nasce para resolver um padrão recorrente em empresas SaaS/B2B:
+A Billing Foundation API (BFA) nasce para resolver um padrão recorrente em empresas SaaS/B2B:
 
 - Implementações de billing e medição de consumo feitas de forma ad hoc em cada produto.
 - Falta de rastreabilidade e idempotência no registro de uso.
