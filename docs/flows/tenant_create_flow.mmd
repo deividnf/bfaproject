@@ -1,5 +1,5 @@
 flowchart TD
-    C["Cliente"] -->|POST /tenants JSON (name, planId?)| CT["TenantsController"]
+    C["Cliente"] -->|POST /tenants JSON body| CT["TenantsController"]
     CT --> ST["TenantsService"]
     ST --> RT["TenantsRepository"]
     RT --> P[("PrismaService")]
