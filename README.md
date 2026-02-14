@@ -1,36 +1,36 @@
 Billing Foundation API (BFA)
 ============================
 
-Infraestrutura backend para governança de consumo e billing baseado em uso (mock), construída em Node.js + TypeScript + NestJS + Prisma + Supabase (PostgreSQL), seguindo arquitetura modular monolítica e Clean Architecture.
+A Billing Foundation API (BFA) é uma API que registra quanto cada cliente usa um produto e gera simulações de cobrança mensal a partir desses dados. Ela foi construída em Node.js + TypeScript + NestJS + Prisma + Supabase (PostgreSQL), seguindo uma arquitetura organizada para facilitar evolução e manutenção.
 
 ---
 
 ## 🎯 Contexto e problema que a BFA resolve
 
-A Billing Foundation API (BFA) nasce para resolver um padrão recorrente em empresas SaaS/B2B:
+A BFA nasce de um problema simples que muitas empresas SaaS/B2B enfrentam:
 
-- Implementações de billing e medição de consumo feitas de forma ad hoc em cada produto.
-- Falta de rastreabilidade e idempotência no registro de uso.
-- Dificuldade em aplicar limites de plano e simular cenários de monetização.
-- Ausência de uma "fundação" reutilizável de billing multi-tenant.
+- Cada produto acaba criando sua própria forma de medir uso e cobrar clientes.
+- É difícil saber, com segurança, quanto cada cliente realmente consumiu.
+- Fica complexo travar o uso quando um plano chega no limite ou testar novos modelos de preço.
+- Vira um esforço repetir essas regras de uso e cobrança em todo novo produto.
 
-A BFA se posiciona como um **backend especializado em governança de consumo e billing baseado em uso (mock)**, que pode ser plugado em produtos diferentes, evitando reescrever sempre o mesmo núcleo.
+A ideia da BFA é ter **um backend único que concentra essas regras de uso e de cobrança simulada**, que pode ser ligado a vários produtos diferentes, evitando reescrever tudo do zero.
 
-Este repositório representa o **núcleo técnico desse backend**, focado inicialmente em tenants, API Keys, modelagem de dados e observabilidade, preparando o terreno para módulos futuros de usage, aggregation e billing.
+Este repositório traz o **núcleo técnico desse backend**, começando por cadastro de clientes (tenants), geração de chaves de acesso (API Keys), estrutura de dados e logs, abrindo espaço para módulos futuros de registro de uso, agregação e billing.
 
 ---
 
 ## 🧩 Visão geral do MVP
 
-Este repositório implementa o núcleo de:
+De forma curta, o que este MVP entrega hoje:
 
-- Gestão de tenants e API Keys.
-- Registro e agregação de consumo (usage).
-- Planos e limites de uso.
-- Ciclo de billing com invoices simuladas (mock).
-- Observabilidade com logs estruturados.
+- **Cadastro de clientes (tenants)** e geração de **API Keys** para cada um.
+- Base para **registrar quanto cada cliente usa** (usage) e somar esse consumo ao longo do tempo.
+- Estrutura para **definir planos** e **limites de uso** por cliente.
+- Base para um **ciclo de cobrança simulado**, gerando "faturas" de exemplo a partir do consumo.
+- **Logs estruturados**, que ajudam a entender o que aconteceu em cada chamada.
 
-O foco atual é o MVP backend, com rotas essenciais para healthcheck, criação de tenants e autenticação via API Key.
+Na prática, o foco atual é o backend com rotas essenciais para healthcheck, criação de tenants e autenticação via API Key. Os módulos de uso, agregação e billing serão evoluídos em cima dessa fundação.
 
 ---
 
