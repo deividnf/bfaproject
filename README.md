@@ -13,6 +13,8 @@ Infraestrutura backend para governança de consumo e billing baseado em uso (moc
 - 🧪 **Testes & incidentes** – [docs/tests](docs/tests)
 - 🧭 **Mapa de rotas HTTP** – [docs/routes_map.md](docs/routes_map.md)
 - 🛡️ **Prevenção de erros** – [docs/backend_error_prevention.md](docs/backend_error_prevention.md)
+ - 📋 **Requisitos funcionais e não funcionais** – [docs/requirements_spec.md](docs/requirements_spec.md)
+ - 🔄 **Fluxos da API (técnicos)** – [docs/api_flow_overview.md](docs/api_flow_overview.md)
 
 ---
 
@@ -31,6 +33,12 @@ Infraestrutura backend para governança de consumo e billing baseado em uso (moc
 
 - **BFA-ROUTES-001** – Mapa de rotas HTTP do backend (MVP)  
   Arquivo: [docs/routes_map.md](docs/routes_map.md)
+
+- **BFA-REQ-001** – Especificação de requisitos funcionais e não funcionais  
+  Arquivo: [docs/requirements_spec.md](docs/requirements_spec.md)
+
+- **BFA-FLOW-001** – Fluxos técnicos da API (MVP + visão próxima)  
+  Arquivo: [docs/api_flow_overview.md](docs/api_flow_overview.md)
 
 ### Testes e incidentes
 
@@ -56,6 +64,21 @@ Este repositório implementa o núcleo de:
 - Observabilidade com logs estruturados.
 
 O foco atual é o MVP backend, com rotas essenciais para healthcheck, criação de tenants e autenticação via API Key.
+
+---
+
+## 🎯 Contexto e problema que a BFA resolve
+
+No estudo de caso descrito em context/bfa_document.md, a BFA nasce para resolver um padrão recorrente em empresas SaaS/B2B:
+
+- Implementações de billing e medição de consumo feitas de forma ad hoc em cada produto.
+- Falta de rastreabilidade e idempotência no registro de uso.
+- Dificuldade em aplicar limites de plano e simular cenários de monetização.
+- Ausência de uma "fundação" reutilizável de billing multi-tenant.
+
+A BFA se posiciona como um **backend especializado em governança de consumo e billing baseado em uso (mock)**, que pode ser plugado em produtos diferentes, evitando reescrever sempre o mesmo núcleo.
+
+Este repositório representa o **núcleo técnico desse backend**, focado inicialmente em tenants, API Keys, modelagem de dados e observabilidade, preparando o terreno para módulos futuros de usage, aggregation e billing.
 
 ---
 
