@@ -5,6 +5,26 @@ Infraestrutura backend para governança de consumo e billing baseado em uso (moc
 
 ---
 
+## 🧬 Stack em um olhar
+
+**Linguagem & Runtime**
+- 🟦 TypeScript
+- 🟢 Node.js 18+
+
+**Framework & Arquitetura**
+- 🧱 NestJS (modular monolith)
+- 🧩 Clean Architecture orientada a domínios (tenants, usage, billing, plans)
+
+**Persistência & ORM**
+- 🐘 PostgreSQL (Supabase)
+- 📦 Prisma 6 (Prisma Client 6.19.x)
+
+**Observabilidade & Qualidade**
+- 📊 Pino + nestjs-pino (logs JSON estruturados)
+- 🧪 Jest + Supertest (testes de integração e unidade)
+
+---
+
 ## 🔗 Navegação rápida
 
 - ▶️ **Visão geral rápida** – ver abaixo
@@ -20,10 +40,15 @@ Infraestrutura backend para governança de consumo e billing baseado em uso (moc
 
 ## 📚 Catálogo de documentação
 
-### Guias principais
+### 📐 Arquitetura & requisitos
 
 - **BFA-ARCH-001** – Arquitetura do backend (MVP)  
   Arquivo: [docs/bfa_architecture_overview.md](docs/bfa_architecture_overview.md)
+
+- **BFA-REQ-001** – Especificação de requisitos funcionais e não funcionais  
+  Arquivo: [docs/requirements_spec.md](docs/requirements_spec.md)
+
+### ⚙️ Setup & operação
 
 - **BFA-SETUP-001** – Backend inicial – setup rápido (sem Docker)  
   Arquivo: [docs/backend_initial_setup.md](docs/backend_initial_setup.md)
@@ -31,16 +56,15 @@ Infraestrutura backend para governança de consumo e billing baseado em uso (moc
 - **BFA-GUIDE-001** – Boas práticas de prevenção de erros (build, startup, banco, logging)  
   Arquivo: [docs/backend_error_prevention.md](docs/backend_error_prevention.md)
 
+### 🌐 API & fluxos
+
 - **BFA-ROUTES-001** – Mapa de rotas HTTP do backend (MVP)  
   Arquivo: [docs/routes_map.md](docs/routes_map.md)
-
-- **BFA-REQ-001** – Especificação de requisitos funcionais e não funcionais  
-  Arquivo: [docs/requirements_spec.md](docs/requirements_spec.md)
 
 - **BFA-FLOW-001** – Fluxos técnicos da API (MVP + visão próxima)  
   Arquivo: [docs/api_flow_overview.md](docs/api_flow_overview.md)
 
-### Testes e incidentes
+### 🧪 Testes & incidentes
 
 - **BFA-INC-001** – Falha de build por dependências e Prisma  
   Arquivo: [docs/tests/2026-02-13_BUILD_DEPENDENCIAS_001.md](docs/tests/2026-02-13_BUILD_DEPENDENCIAS_001.md)
