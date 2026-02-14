@@ -1,7 +1,7 @@
 flowchart TD
-    C[Cliente] -->|GET /tenants/:id\n+ API Key| M[ApiKeyMiddleware]
+    C[Cliente] -->|GET /tenants/:id + API Key| M[ApiKeyMiddleware]
 
-    M -->|Valida chave\nresolve tenantId/apiKeyId| CT[TenantsController]
+    M -->|Valida chave e resolve tenantId/apiKeyId| CT[TenantsController]
     M -->|401/403 em caso de erro| C
 
     CT --> ST[TenantsService]
@@ -15,5 +15,5 @@ flowchart TD
     subgraph Observabilidade
         M --> L[Logger (Pino)]
         CT --> L
-        L --> Logs[(Logs estruturados JSON\ncom tenant_id e api_key_id)]
+        L --> Logs[(Logs estruturados JSON com tenant_id e api_key_id)]
     end
