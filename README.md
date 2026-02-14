@@ -31,40 +31,12 @@ Infraestrutura backend para governança de consumo e billing baseado em uso (moc
 
 ## 📚 Catálogo de documentação
 
-### 📐 Arquitetura & requisitos
-
-- **BFA-ARCH-001** – Arquitetura do backend (MVP)  
-  Arquivo: [docs/bfa_architecture_overview.md](docs/bfa_architecture_overview.md)
-
-- **BFA-REQ-001** – Especificação de requisitos funcionais e não funcionais  
-  Arquivo: [docs/requirements_spec.md](docs/requirements_spec.md)
-
-### ⚙️ Setup & operação
-
-- **BFA-SETUP-001** – Backend inicial – setup rápido (sem Docker)  
-  Arquivo: [docs/backend_initial_setup.md](docs/backend_initial_setup.md)
-
-- **BFA-GUIDE-001** – Boas práticas de prevenção de erros (build, startup, banco, logging)  
-  Arquivo: [docs/backend_error_prevention.md](docs/backend_error_prevention.md)
-
-### 🌐 API & fluxos
-
-- **BFA-ROUTES-001** – Mapa de rotas HTTP do backend (MVP)  
-  Arquivo: [docs/routes_map.md](docs/routes_map.md)
-
-- **BFA-FLOW-001** – Fluxos técnicos da API (MVP + visão próxima)  
-  Arquivo: [docs/api_flow_overview.md](docs/api_flow_overview.md)
-
-### 🧪 Testes & incidentes
-
-- **BFA-INC-001** – Falha de build por dependências e Prisma  
-  Arquivo: [docs/tests/2026-02-13_BUILD_DEPENDENCIAS_001.md](docs/tests/2026-02-13_BUILD_DEPENDENCIAS_001.md)
-
-- **BFA-INC-002** – Falha de startup por logging (pino-pretty)  
-  Arquivo: [docs/tests/2026-02-13_STARTUP_LOGGING_002.md](docs/tests/2026-02-13_STARTUP_LOGGING_002.md)
-
-- **BFA-TEST-003** – Testes de fluxo Tenants + API Key  
-  Arquivo: [docs/tests/2026-02-13_TENANTS_APIKEY_003.md](docs/tests/2026-02-13_TENANTS_APIKEY_003.md)
+| Categoria | Documentos |
+| --------- | ---------- |
+| 📐 **Arquitetura & requisitos** | [BFA-ARCH-001 – Arquitetura do backend (MVP)](docs/bfa_architecture_overview.md)<br>[BFA-REQ-001 – Especificação de requisitos funcionais e não funcionais](docs/requirements_spec.md) |
+| ⚙️ **Setup & operação** | [BFA-SETUP-001 – Backend inicial – setup rápido (sem Docker)](docs/backend_initial_setup.md)<br>[BFA-GUIDE-001 – Boas práticas de prevenção de erros (build, startup, banco, logging)](docs/backend_error_prevention.md) |
+| 🌐 **API & fluxos** | [BFA-ROUTES-001 – Mapa de rotas HTTP do backend (MVP)](docs/routes_map.md)<br>[BFA-FLOW-001 – Fluxos técnicos da API (MVP + visão próxima)](docs/api_flow_overview.md) |
+| 🧪 **Testes & incidentes** | [BFA-INC-001 – Falha de build por dependências e Prisma](docs/tests/2026-02-13_BUILD_DEPENDENCIAS_001.md)<br>[BFA-INC-002 – Falha de startup por logging (pino-pretty)](docs/tests/2026-02-13_STARTUP_LOGGING_002.md)<br>[BFA-TEST-003 – Testes de fluxo Tenants + API Key](docs/tests/2026-02-13_TENANTS_APIKEY_003.md) |
 
 ---
 
