@@ -48,11 +48,11 @@ Infraestrutura backend para governança de consumo e billing baseado em uso (moc
 
 **Fluxogramas visuais (Mermaid, pasta docs/flows)**
 
-- [healthcheck_flow.mmd – Fluxo de GET /health](docs/flows/healthcheck_flow.mmd)
-- [tenant_create_flow.mmd – Fluxo de criação de tenant + API Key](docs/flows/tenant_create_flow.mmd)
-- [tenant_get_flow.mmd – Fluxo de leitura de tenant autenticada](docs/flows/tenant_get_flow.mmd)
-- [usage_event_flow_conceptual.mmd – Fluxo conceitual de registro de uso](docs/flows/usage_event_flow_conceptual.mmd)
-- [architecture_das.mmd – DAS (Diagrama de Arquitetura de Software) da BFA](docs/flows/architecture_das.mmd)
+- [DAS (Diagrama de Arquitetura de Software) da BFA - architecture_das.mmd](docs/flows/architecture_das.mmd)
+- [Fluxo de GET /health - healthcheck_flow.mmd](docs/flows/healthcheck_flow.mmd)
+- [Fluxo de criação de tenant + API Key - tenant_create_flow.mmd](docs/flows/tenant_create_flow.mmd)
+- [Fluxo de leitura de tenant autenticada - tenant_get_flow.mmd – ](docs/flows/tenant_get_flow.mmd)
+- [Fluxo conceitual de registro de uso - usage_event_flow_conceptual.mmd – ](docs/flows/usage_event_flow_conceptual.mmd)
 
 Abra esses arquivos no VS Code ou GitHub com suporte a Mermaid para visualizar os fluxogramas.
 
