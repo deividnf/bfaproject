@@ -1,0 +1,36 @@
+flowchart TD
+    subgraph Clientes
+        APP1[Aplicações SaaS / Serviços internos]
+    end
+
+    APP1 -->|HTTP + API Key| API[Billing Foundation API\n(NestJS + TypeScript)]
+
+    subgraph Core
+        API --> AUTH[Core / Auth\nApiKeyMiddleware]
+        API --> LOG[Core / Logging\nPino + nestjs-pino]
+        API --> HEALTH[Core / Health]
+    end
+
+    subgraph Domínios (Modules)
+        API --> TEN[Tenants Module]
+        API --> USG[Usage Module]
+        API --> BIL[Billing Module]
+        API --> PLN[Plans Module]
+    end
+
+    subgraph Infra
+        TEN --> PRISMA[(PrismaService)]
+        USG --> PRISMA
+        BIL --> PRISMA
+        PLN --> PRISMA
+
+        PRISMA --> DB[(Supabase / PostgreSQL)]
+    end
+
+    LOG --> LOGS[(Logs estruturados JSON\nrequest_id, tenant_id, api_key_id)]
+
+    subgraph Qualidade
+        TESTS[Jest + Supertest\nTestes E2E/integração]
+    end
+
+    TESTS --> API

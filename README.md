@@ -40,6 +40,24 @@ Infraestrutura backend para governança de consumo e billing baseado em uso (moc
 
 ---
 
+## 🧭 Fluxos – documento x fluxogramas visuais
+
+**Documento de referência (texto + explicação técnica)**
+
+- [BFA-FLOW-001 – Fluxos técnicos da API (MVP + visão próxima)](docs/api_flow_overview.md)
+
+**Fluxogramas visuais (Mermaid, pasta docs/flows)**
+
+- [healthcheck_flow.mmd – Fluxo de GET /health](docs/flows/healthcheck_flow.mmd)
+- [tenant_create_flow.mmd – Fluxo de criação de tenant + API Key](docs/flows/tenant_create_flow.mmd)
+- [tenant_get_flow.mmd – Fluxo de leitura de tenant autenticada](docs/flows/tenant_get_flow.mmd)
+- [usage_event_flow_conceptual.mmd – Fluxo conceitual de registro de uso](docs/flows/usage_event_flow_conceptual.mmd)
+- [architecture_das.mmd – DAS (Diagrama de Arquitetura de Software) da BFA](docs/flows/architecture_das.mmd)
+
+Abra esses arquivos no VS Code ou GitHub com suporte a Mermaid para visualizar os fluxogramas.
+
+---
+
 ## 🧩 Visão geral do MVP
 
 Este repositório implementa o núcleo de:

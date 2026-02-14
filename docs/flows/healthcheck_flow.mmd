@@ -1,0 +1,10 @@
+flowchart LR
+    C[Cliente] -->|GET /health| H[HealthController]
+    H --> A[Aplicação NestJS]
+    H --> L[Logger (Pino)]
+    A --> DB[(Supabase/PostgreSQL)]
+    H --> R[Resposta 200 OK]
+
+    subgraph Observabilidade
+        L --> Logs[(Logs estruturados JSON)]
+    end
