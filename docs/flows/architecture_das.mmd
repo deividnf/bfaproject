@@ -1,36 +1,36 @@
 flowchart TD
     subgraph Clientes
-        APP1[Aplicações SaaS / Serviços internos]
+        APP1["Aplicações SaaS / Serviços internos"]
     end
 
-    APP1 -->|HTTP + API Key| API[Billing Foundation API (NestJS + TypeScript)]
+    APP1 -->|HTTP + API Key| API["Billing Foundation API (NestJS + TypeScript)"]
 
     subgraph Core
-        API --> AUTH[Core / Auth ApiKeyMiddleware]
-        API --> LOG[Core / Logging Pino + nestjs-pino]
-        API --> HEALTH[Core / Health]
+        API --> AUTH["Core / Auth ApiKeyMiddleware"]
+        API --> LOG["Core / Logging Pino + nestjs-pino"]
+        API --> HEALTH["Core / Health"]
     end
 
     subgraph Dominios_Modules [Domínios (Modules)]
-        API --> TEN[Tenants Module]
-        API --> USG[Usage Module]
-        API --> BIL[Billing Module]
-        API --> PLN[Plans Module]
+        API --> TEN["Tenants Module"]
+        API --> USG["Usage Module"]
+        API --> BIL["Billing Module"]
+        API --> PLN["Plans Module"]
     end
 
     subgraph Infra
-        TEN --> PRISMA[(PrismaService)]
+        TEN --> PRISMA[("PrismaService")]
         USG --> PRISMA
         BIL --> PRISMA
         PLN --> PRISMA
 
-        PRISMA --> DB[(Supabase / PostgreSQL)]
+        PRISMA --> DB[("Supabase / PostgreSQL")]
     end
 
-    LOG --> LOGS[(Logs estruturados JSON request_id, tenant_id, api_key_id)]
+    LOG --> LOGS[("Logs estruturados JSON request_id, tenant_id, api_key_id")]
 
     subgraph Qualidade
-        TESTS[Jest + Supertest Testes E2E/integração]
+        TESTS["Jest + Supertest Testes E2E/integração"]
     end
 
     TESTS --> API

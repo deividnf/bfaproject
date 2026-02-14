@@ -1,17 +1,17 @@
 flowchart TD
-    C[Cliente] -->|POST /tenants JSON (name, planId?)| CT[TenantsController]
-    CT --> ST[TenantsService]
-    ST --> RT[TenantsRepository]
-    RT --> P[(PrismaService)]
-    P --> DB[(Supabase/PostgreSQL)]
+    C["Cliente"] -->|POST /tenants JSON (name, planId?)| CT["TenantsController"]
+    CT --> ST["TenantsService"]
+    ST --> RT["TenantsRepository"]
+    RT --> P[("PrismaService")]
+    P --> DB[("Supabase/PostgreSQL")]
 
-    ST --> AK[Gerar API Key segura + calcular hash sha256]
+    ST --> AK["Gerar API Key segura + calcular hash sha256"]
     AK --> P
 
-    ST --> RES[Resposta 201 Tenant + API Key em texto claro]
+    ST --> RES["Resposta 201 Tenant + API Key em texto claro"]
     RES --> C
 
     subgraph Observabilidade
-        CT --> L[Logger (Pino)]
-        L --> Logs[(Logs estruturados JSON)]
+        CT --> L["Logger (Pino)"]
+        L --> Logs[("Logs estruturados JSON")]
     end

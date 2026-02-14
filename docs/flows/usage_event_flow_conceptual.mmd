@@ -1,22 +1,22 @@
 flowchart TD
-    C[Cliente] -->|POST /usage-events + API Key + body| M[ApiKeyMiddleware]
-    M --> UCT[UsageController]
+    C["Cliente"] -->|POST /usage-events + API Key + body| M["ApiKeyMiddleware"]
+    M --> UCT["UsageController"]
 
-    UCT --> US[UsageService]
-    US -->|Valida idempotencyKey por tenantId| UR[UsageRepository]
-    UR --> P[(PrismaService)]
-    P --> DB[(UsageEvent em Supabase/PostgreSQL)]
+    UCT --> US["UsageService"]
+    US -->|Valida idempotencyKey por tenantId| UR["UsageRepository"]
+    UR --> P[("PrismaService")]
+    P --> DB[("UsageEvent em Supabase/PostgreSQL")]
 
-    US -->|Consulta plano e limites| PR[PlanRepository]
+    US -->|Consulta plano e limites| PR["PlanRepository"]
     PR --> P
 
     US -->|Excede limite? 403 Forbidden| C
     US -->|Ok: cria UsageEvent| C
 
-    US --> Q[(Publicação futura para fila/stream)]
+    US --> Q[("Publicação futura para fila/stream")]
 
     subgraph Observabilidade
-        M --> L[Logger (Pino)]
+        M --> L["Logger (Pino)"]
         UCT --> L
-        L --> Logs[(Logs estruturados JSON)]
+        L --> Logs[("Logs estruturados JSON")]
     end
